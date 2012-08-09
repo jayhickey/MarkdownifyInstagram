@@ -37,35 +37,45 @@ def create_draft(fileDict, draftLoc, localImg):
     draft.write("=====================\n")
     draft.write("Link: %s" % (fileDict['URL']) + "\n")
     draft.write("publish-not-yet\n\n")
+    print localImg
     draft.write("![%(1)s](%(2)s)\n\n" % {"1" : fileDict['Caption'], "2" : localImg})
     #draft.write("%s\n\n" % fileDict['Caption'])
     draft.write("(Taken with [Instagram](http://instagram.com))")
     draft.close()
 
 
-if __name__ == '__main__':  
+if __name__ == '__main__':
+
+    Local_Image_URL_Path = ''
+    Website = ''
+
     IFTTT_Read_Path = sys.argv[1]
 
     Draft_Write_Path = sys.argv[2]
 
-    Local_Image_URL_Path = sys.argv[3]
-
-    Website = sys.argv[4]
+    # These parameters are optional
+    if len(sys.argv) >= 4:
+        Local_Image_URL_Path = sys.argv[3]
+    if len(sys.argv) == 5:
+        Website = sys.argv[4]
 
     fileList = glob.glob(IFTTT_Read_Path + '*instagr.am*.txt')
+    
     for files in fileList:
 
         # Read the Instagram data
         fileDict = read_file(files)
-        
-        # Make a local copy of the image (dated)
-        image = urllib.URLopener()
-        eventTime = strftime("%Y-%m-%d_%I%M%S", localtime())
-        fileName, fileExtension = os.path.splitext(fileDict['Source'])
-        localImgPath = IFTTT_Read_Path + eventTime + fileExtension
-        image.retrieve(fileDict['Source'], localImgPath)
 
-        imgURL = Website + Local_Image_URL_Path + eventTime + fileExtension
+        if Local_Image_URL_Path != '' or Website != '':
+            # Make a local copy of the image (dated)
+            image = urllib.URLopener()
+            eventTime = strftime("%Y-%m-%d_%I%M%S", localtime())
+            fileName, fileExtension = os.path.splitext(fileDict['Source'])
+            localImgPath = IFTTT_Read_Path + eventTime + fileExtension
+            image.retrieve(fileDict['Source'], localImgPath)
+            imgURL = Website + Local_Image_URL_Path + eventTime + fileExtension
+        else:
+            imgURL = fileDict['Source']
 
         # Create a markdown draft
         create_draft(fileDict, Draft_Write_Path, imgURL)
