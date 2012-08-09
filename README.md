@@ -4,7 +4,7 @@ Markdownify Instagram pairs with an [IFTTT](http://ifttt.com) recipe to automati
 
 The Instagram post can also be downloaded to a local path on your server for embedding—so you don't have to rely on Instagram for hosting.
 
-**Warning:** Markdownify Instagram is in early development. Use it with caution and at your own risk. There may be bugs—please let me know of any issues you have and I'll look into them. Feel free to pull request improvements!
+**Warning:** Markdownify Instagram is in early development. Use it with caution and at your own risk. There may be bugs—please let me know of any issues you have and I'll look into them. Feel free to pull request!
 
 ## Installation
 
