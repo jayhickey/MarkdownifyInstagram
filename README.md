@@ -1,6 +1,6 @@
 # Markdownify Instagram
 
-Markdownify Instagram pairs with an IFTTT recipe to automatically create an embedded Instagram markdown post. 
+Markdownify Instagram pairs with an [IFTTT](http://ifttt.com) recipe to automatically create an embedded Instagram markdown post. 
 
 The Instagram post can also be downloaded to a local path on your server for embedding—so you don't have to rely on Instagram for hosting.
 
