@@ -34,7 +34,7 @@ Here's an example:
 
 **Note:** All parameters will need `/`'s at the beginning and end, except `{{Website}}`
 
-### Running Automatically with `iNotify-wait`
+### Running Automatically with iNotify-wait
 
 With [inotify-tools](https://github.com/rvoicilas/inotify-tools/wiki), you can use `inotify-wait` with the included shell script. Adding the script to your crontab will enable Instagram Automator to run automatically when a IFTTT Instagram file hits your `{{IFTTT_Read_Path}}`. 
 
