@@ -1,11 +1,16 @@
 #  
 #   MARKDOWNIFY INSTAGRAM
 #
+#   Created by: Jay Hickey
+#   Contact: http://jayhickey.com
+#
+#   ABOUT:
+#
 #   Markdownify Instagram pairs with an IFTTT recipe to automatically create an embedded Instagram markdown post
 #   
 #   Use the recipe found here: http://ifttt.com/myrecipes/personal/1541166/share
 #
-#   Inputs: {{IFTTT_Read_Path}}, {{Draft_Write_Path}}, {{Local_Image_URL_Path}}, {{Website}}
+#   Inputs: python MarkdownifyInstagram.py {{IFTTT_Read_Path}}, {{Draft_Write_Path}}, {{Local_Image_URL_Path}}, {{Website}}
 #   Example: python MarkdownifyInstagram.py /home/blog/secondcrack/www/media/instagram/ /home/blog/Dropbox/Blog/drafts/ /media/instagram/ http://jayhickey.com
 
 import os
@@ -59,6 +64,7 @@ if __name__ == '__main__':
     if len(sys.argv) == 5:
         Website = sys.argv[4]
 
+    # Make sure the file is a text file from Instagram
     fileList = glob.glob(IFTTT_Read_Path + '*instagr.am*.txt')
     
     for files in fileList:
