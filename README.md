@@ -8,11 +8,11 @@ The Instagram post can also be downloaded to a local path on your server for emb
 
 ### Setting Up IFTTT
 
-Create this [IFTTT Recipe](http://ifttt.com/myrecipes/personal/1541166/share). Your Dropbox folder path can be whatever you want, but make sure the filename is `URL`. And the "Content" section should look exactly like this:
+Create this [IFTTT Recipe](http://ifttt.com/recipes/49708). Your Dropbox folder path can be whatever you want, but make sure the filename is `URL`. And the "Content" section should look exactly like this:
 
 ![IFTTT](https://raw.github.com/jayhickey/MarkdownifyInstagram/master/img/recipe.png)
 
- All the blue text items are from the combo box on the right side
+ All the blue text items are from the combo box on the right side.
 
 ### Running Manually
 

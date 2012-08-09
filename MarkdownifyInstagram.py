@@ -40,7 +40,7 @@ def create_draft(fileDict, draftLoc, localImg):
     print localImg
     draft.write("![%(1)s](%(2)s)\n\n" % {"1" : fileDict['Caption'], "2" : localImg})
     #draft.write("%s\n\n" % fileDict['Caption'])
-    draft.write("(Taken with [Instagram](http://instagram.com))")
+    draft.write("(Via [Instagram](http://instagram.com))")
     draft.close()
 
 
