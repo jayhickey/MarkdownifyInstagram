@@ -1,6 +1,6 @@
 # Markdownify Instagram
 
-Markdownify Instagram pairs with an [IFTTT](http://ifttt.com) recipe to automatically create an embedded Instagram markdown post. 
+Markdownify Instagram pairs with an [IFTTT Recipe](http://ifttt.com/recipes/49883) to automatically create an embedded Instagram markdown post. 
 
 The Instagram post can also be downloaded to a local path on your server for embedding—so you don't have to rely on Instagram for hosting.
 
@@ -10,7 +10,7 @@ The Instagram post can also be downloaded to a local path on your server for emb
 
 ### Setting Up IFTTT
 
-Create this [IFTTT Recipe](http://ifttt.com/recipes/49708). Your Dropbox folder path can be whatever you want, but make sure the filename is `URL`. And the "Content" section should look exactly like this:
+Create this [IFTTT Recipe](http://ifttt.com/recipes/49883). Your Dropbox folder path can be whatever you want, but make sure the filename is `URL`. And the "Content" section should look exactly like this:
 
 ![IFTTT](https://raw.github.com/jayhickey/MarkdownifyInstagram/master/img/recipe.png)
 
