@@ -14,7 +14,7 @@ Create this [IFTTT Recipe](http://ifttt.com/recipes/49883). Your Dropbox folder 
 
 ![IFTTT](https://raw.github.com/jayhickey/MarkdownifyInstagram/master/img/recipe.png)
 
- All the blue text items are from the combo box on the right side.
+ All the blue text items can be selected from the combo box on the right side or entered manually, e.g., by entering `{{Url}}` or `{{Caption}}`.
 
 ### Running Manually
 
@@ -34,7 +34,7 @@ Here's an example:
 
 **Note:** All parameters will need `/`'s at the beginning and end, except `{{Website}}`
 
-### Running Automatically with iNotify-wait
+### Running Automatically with iNotify
 
 With [inotify-tools](https://github.com/rvoicilas/inotify-tools/wiki), you can use `inotify-wait` with the included shell script. Adding the script to your crontab will enable Instagram Automator to run automatically when a IFTTT Instagram file hits your `{{IFTTT_Read_Path}}`. 
 
