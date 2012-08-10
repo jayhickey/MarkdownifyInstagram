@@ -8,7 +8,7 @@
 #
 #   Markdownify Instagram pairs with an IFTTT recipe to automatically create an embedded Instagram markdown post
 #   
-#   Use the recipe found here: http://ifttt.com/myrecipes/personal/1541166/share
+#   Use the recipe found here: http://ifttt.com/recipes/49883
 #
 #   Inputs: python MarkdownifyInstagram.py {{IFTTT_Read_Path}}, {{Draft_Write_Path}}, {{Local_Image_URL_Path}}, {{Website}}
 #   Example: python MarkdownifyInstagram.py /home/blog/secondcrack/www/media/instagram/ /home/blog/Dropbox/Blog/drafts/ /media/instagram/ http://jayhickey.com
@@ -16,7 +16,7 @@
 import os
 import sys
 import re 
-import glob
+from glob import glob
 import urllib
 from time import localtime, strftime
 
@@ -63,7 +63,7 @@ if __name__ == '__main__':
         Website = sys.argv[4]
 
     # Make sure the file is a text file from Instagram
-    fileList = glob.glob(IFTTT_Read_Path + '*instagr.am*.txt')
+    fileList = glob(IFTTT_Read_Path + 'http-instagr.am*.txt')
     
     for files in fileList:
 
