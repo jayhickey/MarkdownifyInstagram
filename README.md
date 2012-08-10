@@ -14,7 +14,7 @@ Create this [IFTTT Recipe](http://ifttt.com/recipes/49883). Your Dropbox folder 
 
 ![IFTTT](https://raw.github.com/jayhickey/MarkdownifyInstagram/master/img/recipe.png)
 
- All the blue text items can be selected from the combo box on the right side or entered manually, e.g., by entering {{Url}} or {{Caption}}.
+ All the blue text items can be selected from the combo box on the right side or entered manually, e.g., by entering `{{Url}}` or `{{Caption}}`.
 
 ### Running Manually
 
