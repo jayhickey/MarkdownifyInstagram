@@ -34,15 +34,15 @@ def read_file(file):
     f.close()
     return fileDict
 
-def create_draft(fileDict, draftLoc, localImg):
+def create_draft(fileDict, draftLoc, imgLink):
     # Embed the photo with markdown
     draft = open(draftLoc + "/%s.md" % (fileDict['Caption']), mode="w")
     draft.write(fileDict['Caption'] + '\n')
     draft.write("=====================\n")
     draft.write("Link: %s" % (fileDict['URL']) + "\n")
     draft.write("publish-not-yet\n\n")
-    print localImg
-    draft.write("![%(1)s](%(2)s)\n\n" % {"1" : fileDict['Caption'], "2" : localImg})
+    print imgLink
+    draft.write("![%(1)s](%(2)s)\n\n" % {"1" : fileDict['Caption'], "2" : imgLink})
     draft.write("(Via [Instagram](http://instagram.com))")
     draft.close()
 
@@ -51,7 +51,7 @@ if __name__ == '__main__':
     # These might not be used, so make them empty
     Local_Image_URL_Path = ''
     Website = ''
-    
+
     # Read input arguments
     IFTTT_Read_Path = sys.argv[1]
     Draft_Write_Path = sys.argv[2]
@@ -75,8 +75,8 @@ if __name__ == '__main__':
             image = urllib.URLopener()
             eventTime = strftime("%Y-%m-%d_%H%M%S", localtime())
             fileName, fileExtension = os.path.splitext(fileDict['Source'])
-            localImgPath = IFTTT_Read_Path + eventTime + fileExtension
-            image.retrieve(fileDict['Source'], localImgPath)
+            imgLinkPath = IFTTT_Read_Path + eventTime + fileExtension
+            image.retrieve(fileDict['Source'], imgLinkPath)
             imgURL = Website + Local_Image_URL_Path + eventTime + fileExtension
         else:
             # Use the image hosted by Instagram
