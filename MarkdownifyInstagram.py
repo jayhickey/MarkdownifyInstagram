@@ -63,7 +63,7 @@ if __name__ == '__main__':
         Website = sys.argv[4]
 
     # Make sure the file is a text file from Instagram
-    fileList = glob(IFTTT_Read_Path + 'http-instagr.am*.txt')
+    fileList = glob(IFTTT_Read_Path + '*instagr.am*.txt')
     
     for files in fileList:
 
