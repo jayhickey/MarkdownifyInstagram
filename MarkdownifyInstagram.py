@@ -31,12 +31,20 @@ def read_file(file):
         x = re.search(r'([\w\@\.]+)\s*:\s*(.*)', line)
         if x != None:
             fileDict[x.group(1)] = x.group(2)
+	    print fileDict
     f.close()
     return fileDict
 
 def create_draft(fileDict, draftLoc, imgLink):
+    # Repace non-alphanumerics with dashes for filename
+    c = re.sub("[^A-Za-z]", "-", fileDict['Caption'])
+    while c.endswith('-'):
+        c = c[:-1]
+    c = c.replace('--','-') # In case of any double dashes
+    c = c.lower()
+    
     # Embed the photo with markdown
-    draft = open(draftLoc + "/%s.md" % (fileDict['Caption']), mode="w")
+    draft = open(draftLoc + "/%s.md" % (c), mode="w")
     draft.write(fileDict['Caption'] + '\n')
     draft.write("=====================\n")
     draft.write("Link: %s" % (fileDict['URL']) + "\n")
