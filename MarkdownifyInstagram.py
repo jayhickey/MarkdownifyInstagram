@@ -36,11 +36,10 @@ def read_file(file):
     return fileDict
 
 def create_draft(fileDict, draftLoc, imgLink):
-    # Repace non-alphanumerics with dashes for filename
-    c = re.sub("[^A-Za-z]", "-", fileDict['Caption'])
+    # Replace non-alphanumerics with dashes for filename
+    c = re.sub(r'[\t !"#$%&\'()*\-/<=>?@\[\\\]^_`{|},.]+',"-",fileDict['Caption'])
     while c.endswith('-'):
         c = c[:-1]
-    c = c.replace('--','-') # In case of any double dashes
     c = c.lower()
     
     # Embed the photo with markdown
