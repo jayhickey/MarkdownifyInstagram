@@ -37,7 +37,7 @@ def read_file(file):
 
 def create_draft(fileDict, draftLoc, imgLink):
     # Replace non-alphanumerics with dashes for filename
-    c = re.sub(r'[\t !"#$%&\'()*\-/<=>?@\[\\\]^_`{|},.]+',"-",fileDict['Caption'])
+    c = re.sub(r'[\t !"#$:;%&\'()*\-/<=>?@\[\\\]^_`{|},.]+',"-",fileDict['Caption'])
     while c.endswith('-'):
         c = c[:-1]
     c = c.lower()
